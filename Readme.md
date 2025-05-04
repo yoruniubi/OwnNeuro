@@ -65,7 +65,7 @@ python live2d_interface.py
 please download the desktop application from the following link:
 
 [Download]
-(https://www.alipan.com/s/V8FKwheRYsS)
+(https://www.alipan.com/s/yz4wBf1FKp6)
 
 Note:
 
