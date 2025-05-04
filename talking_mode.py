@@ -297,36 +297,6 @@ class Record_Worker(QObject):
                 self.ai_trigger.emit(text.strip())  # 新增信号
         else:  # 原有唤醒词检测逻辑
             self.check_wake_words(text)
-    def process_audio(self):
-        if self.data_queue.empty():
-            return
-
-        now = datetime.utcnow()
-        phrase_complete = False
-        
-        if self.phrase_time and now - self.phrase_time > timedelta(seconds=self.args.phrase_timeout):
-            phrase_complete = True
-        self.phrase_time = now
-
-        audio_data = b''.join(self.data_queue.queue)
-        self.data_queue.queue.clear()
-
-        audio_np = np.frombuffer(audio_data, dtype=np.int16).astype(np.float32) / 32768.0
-
-       # 进一步优化代码逻辑，避免生成器为空的问题
-        segments, _ = self.model.transcribe(audio_np)
-        text = ""
-        if segments:
-            try:
-                for segment in segments: 
-                    text += segment.text.strip() + " "
-                text = text.strip()
-            except Exception as e:
-                print(f"语音解析失败: {str(e)}")
-        print(f"识别结果: {text}")
-        self.text_recognized.emit(text)
-        self.check_wake_words(text)
-
     def check_wake_words(self, text):
         for word in self.config.get_config("wake_words", ensure_list=True):
             if word.lower() in text.lower():
