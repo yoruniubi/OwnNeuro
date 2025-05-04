@@ -348,6 +348,7 @@ class Record_Worker(QObject):
 class FilePicker(QWidget):
     audio_path = Signal(str)
     prompt_text = Signal(str)
+    error_signal = Signal(str)  # 新增错误信号
     def __init__(self, whisper_model=None):
         super().__init__()
         self.whisper = whisper_model
@@ -381,15 +382,11 @@ class FilePicker(QWidget):
         self.resize(300, 100)   # 设置窗口初始尺寸
 
     def handle_audio_file(self, audio_path):
-        try:
-            # 使用 faster_whisper 识别语音
-            segments, _ = self.whisper.transcribe(audio_path)
-            text = " ".join([segment.text.strip() for segment in segments])
-            self.prompt_text.emit(text)  # 发射信号
-            return text
-        except Exception as e:
-            print(f"音频处理失败: {str(e)}")
-            return ""
+        # 使用工作线程处理耗时操作
+        worker = AudioWorker(audio_path, self.whisper)
+        worker.signals.result.connect(self.prompt_text.emit)
+        worker.signals.error.connect(self.error_signal.emit)
+        QThreadPool.globalInstance().start(worker)
 
     def open_file(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "打开文件")
@@ -397,6 +394,27 @@ class FilePicker(QWidget):
             self.label.setText(f"当前音源路径: {file_name}")
             self.audio_path.emit(file_name)  
             self.handle_audio_file(file_name)
+# 音频处理工作线程
+class AudioSignals(QObject):
+    result = Signal(str)
+    error = Signal(str)
+# 音频处理工作线程
+class AudioWorker(QRunnable):
+    def __init__(self, path, whisper_model):
+        super().__init__()
+        self.signals = AudioSignals()
+        self.path = path
+        self.whisper = whisper_model
+
+    def run(self):
+        try:
+            segments, _ = self.whisper.transcribe(self.path)
+            text = " ".join([segment.text.strip() for segment in segments])
+            self.signals.result.emit(text)
+            print(f"识别结果: {text}")
+        except Exception as e:
+            self.signals.error.emit(f"音频处理失败: {str(e)}")
+
 class TalkingMode(QWidget):
     model_changed = Signal(str)
     wakeup_signal = Signal(bool)
@@ -529,6 +547,7 @@ class TalkingMode(QWidget):
         self.api_key_line.returnPressed.connect(self.handle_api_key_edit_finished)
         self.tts_audio_line.audio_path.connect(self.handle_audio_path)
         self.tts_audio_line.prompt_text.connect(self.handle_prompt_text)
+        self.tts_audio_line.error_signal.connect(self.show_error_toast)
         self.worker.ai_trigger.connect(self.handle_ai_trigger)
         self.agent_line.currentTextChanged.connect(self.update_selected_prompt) 
         self.model_line.currentTextChanged.connect(self.update_selected_model)
@@ -539,6 +558,7 @@ class TalkingMode(QWidget):
         self.model_list_ready.connect(self.update_model_combobox)
         self.model_fetch_error.connect(self.show_error_toast)
         self.active_threads = []
+        self.thread_pool = QThreadPool()
         self.thread_pool = QThreadPool.globalInstance() 
         self.get_model_list() 
     def get_model_list(self):
@@ -566,7 +586,7 @@ class TalkingMode(QWidget):
     @Slot(str)
     def show_error_toast(self, msg):
         Flyout.create(
-            title="⚠️ 网络错误",
+            title="⚠️ 错误",
             content=msg,
             target=self.model_label,
             parent=self,
