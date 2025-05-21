@@ -36,7 +36,7 @@ Working Window:
 
 TTS Setting:
 
-!["TTS Setting"](./interface_images/tts_setting.png)
+!["TTS Setting"](./interface_images/TTS_setting.png)
 
 # Development #
 
@@ -73,6 +73,7 @@ please download the desktop application from the following link:
 [Download] 
 
 total size: 3.5G(contains the pretrained model)
+
 (https://www.alipan.com/s/QcV15UBpbb4)
 
 or download from the github release
