@@ -1,0 +1,125 @@
+[
+    {
+        "source": "https://quail.ink/op7418/feed/atom",
+        "title": "AIGC Weekly",
+        "entries": [
+            {
+                "title": "AIGC Weekly #122",
+                "link": "https://quaily.com/op7418/p/aigc-weekly-3tvebnly",
+                "published": "2025-05-19T06:51:33Z",
+                "summary": "OpenAI发布了AI编程云端代理Codex，更新了本地版并推出GPT-4.1；谷歌则在AI Studio中上线了Imagen 3等新模型，但取消了Gemini 2.5 Pro的免费API。其他亮点包括混元2.0实时图像模型、Windsurf的SWE-1编码模型、Stability AI的开源小型语音模型...新突破。",
+                "score": "0.43"
+            },
+            {
+                "title": "AIGC Weekly #121",
+                "link": "https://quaily.com/op7418/p/aigc-weekly",
+                "published": "2025-05-12T03:18:51Z",
+                "summary": "重点关注谷歌即将到来的I/O大会及行业热点。谷歌进行了一系列预热，包括提前发布Gemini 2.5 Pro 05-06版本（代码能力显著增强），升级Gemini Flash图像生成能力，以及推出隐式缓存功能。业内其他重要动向包括：Cursor发布0.5版本重大更新，ChatGPT深度研究功能支持Githu...功能等。",
+                "score": "0"
+            },
+            {
+                "title": "AIGC Weekly #120",
+                "link": "https://quaily.com/op7418/p/aigc-weekly-one-hundred-twenty",
+                "published": "2025-05-05T16:22:50Z",
+                "summary": "主要更新包括 DeepSeek 发布专攻数学定理证明的 Prover V2 模型，以及 Claude 推出可连接外部应用的 Integrations 功能和 Advanced Research 深度研究能力。其他进展涵盖了谷歌 AI 搜索、多家 AI 图像工具（如 Visual Electric、Krea...沿议题。",
+                "score": "0.37"
+            },
+            {
+                "title": "AIGC Weekly #119",
+                "link": "https://quaily.com/op7418/p/aigc-weekly-nineteen",
+                "published": "2025-04-28T03:24:55Z",
+                "summary": "在行业动态方面，千问发布了海外版移动应用，OpenAI预计未来五年收入将达1250亿美元，Riffusion推出了高质量音乐生成模型FUZZ-1.0，字节的即梦3.0视频生成模型开始灰度测试。OpenAI的GPT-4o用户使用限额翻倍，图像生成API也正式上线。产品推荐部分介绍了四款新工具：DeepWik...助手)。",
+                "score": "0"
+            },
+            {
+                "title": "AIGC Weekly #118",
+                "link": "https://quaily.com/op7418/p/aigc-weekly-one-one-eight",
+                "published": "2025-04-21T06:40:27Z",
+                "summary": "上周，OpenAI 发布了多个新模型，包括 GPT‑4.1 系列和 o3/o4 mini，提升了上下文长度、代码能力和视觉推理能力，还开放了终端代码工具 Codex CLI。与此同时，谷歌、Claude、字节等公司也推出了新模型和平台，AI 编程、视频生成和多模态交互持续进化。精选内容涵盖智能代理构建、安...地应用。",
+                "score": "0.19"
+            }
+        ]
+    },
+    {
+        "source": "https://sspai.com/feed",
+        "title": "少数派",
+        "entries": [
+            {
+                "title": "比小更小：QAZ 键盘配置思路分享",
+                "link": "https://sspai.com/prime/story/qaz-layout-configurations",
+                "published": "Wed, 21 May 2025 17:46:21 +0800",
+                "summary": "在大而全的专业化之外，有些键盘走向了尽可能轻薄便携的道路。比如我在一期「新玩意」里提到在用的temper套件：矮轴、FR4板三明治结构、36键的特殊配列加分体，能在尽量小的体积里提供尽量好的输入体验。 ...<a href=\"https://sspai.com/prime/story/qaz-layout-configurations\" target=\"_blank\">查看全文</a><p>本文为会员文章，出自<a href=\"https://sspai.com/prime/precog/single\" target=\"_blank\">《单篇文章》</a>，订阅后可阅读全文。</p>",
+                "score": "0"
+            },
+            {
+                "title": "一日一技｜三个实用「改造」，给被迫用上新版 Outlook 的你",
+                "link": "https://sspai.com/post/99325",
+                "published": "Wed, 21 May 2025 17:30:00 +0800",
+                "summary": "将微软强推的新版 Outlook 改造成体验接近旧版《邮件和日历》的存在——支持开机自启动、可以在关闭后后台收信，并且界面清爽无推广。<a href=\"https://sspai.com/post/99325\" target=\"_blank\">查看全文</a>",
+                "score": "0"
+            },
+            {
+                "title": "看什么 · 特别篇丨一张带你环游世界的夏日片单",
+                "link": "https://sspai.com/post/66840",
+                "published": "Wed, 21 May 2025 15:00:29 +0800",
+                "summary": "和电影镜头一起环游世界，让这些作品伴你一夏<a href=\"https://sspai.com/post/66840\" target=\"_blank\">查看全文</a>",
+                "score": "0"
+            },
+            {
+                "title": "618 又来了，我们为你准备了一份护肤购物清单",
+                "link": "https://sspai.com/post/99406",
+                "published": "Wed, 21 May 2025 11:30:00 +0800",
+                "summary": "根据护肤品的产品品类、具体功效需求，给你提供一些购买参考和建议。<a href=\"https://sspai.com/post/99406\" target=\"_blank\">查看全文</a>",
+                "score": "0"
+            },
+            {
+                "title": "派早报：Google I/O 2025 大会开幕、iQOO Neo10 Pro+ 发布等",
+                "link": "https://sspai.com/post/99423",
+                "published": "Wed, 21 May 2025 07:30:00 +0800",
+                "summary": "微软将为 Windows 带来 MCP 平台支持，微软开源 Windows Subsystem for Linux。<a href=\"https://sspai.com/post/99423\" target=\"_blank\">查看全文</a>",
+                "score": "0"
+            }
+        ]
+    },
+    {
+        "source": "https://www.appinn.com/feed",
+        "title": "小众软件",
+        "entries": [
+            {
+                "title": "Vim 替代者？微软发布开源命令行编辑器 Edit，大小不到 250kB",
+                "link": "https://www.appinn.com/microsoft-edit-open-source/",
+                "published": "Wed, 21 May 2025 09:08:49 +0000",
+                "summary": "Edit，就叫这个名字。这是微软刚刚开源的一款 Windows、Linux 命令行编辑器，未来将会作为 Windows 11 的一部分发布。支持鼠标控制菜单、可同时打开多个文件、拥有查找与替换功能、支",
+                "score": "0"
+            },
+            {
+                "title": "xtool – 跨平台 Xcode 替代品：用 Linux、Windows 构建和部署 iOS 应用",
+                "link": "https://www.appinn.com/xtool-for-ios/",
+                "published": "Wed, 21 May 2025 08:09:50 +0000",
+                "summary": "xtool 是一款开发者工具，它是跨平台的 Xcode 替代品，使用 SwiftPM 在 Linux、Windows 和 macOS 上构建和部署 iOS 应用，没有 Mac 设备也能编写 iOS 应",
+                "score": "0"
+            },
+            {
+                "title": "Aria2Manager – 即开即用，下载神器 Aria2 图形客户端，多 Aria2 服务器管理、自动更新 Trackers",
+                "link": "https://www.appinn.com/aria2manager/",
+                "published": "Wed, 21 May 2025 05:59:35 +0000",
+                "summary": "Aria2Manager 是一款 Windows 下的 Aria2 图形客户端，自带 Aria2 即开即用，也支持多 Aria2 服务器，还能自动更新 BT 专用 Trackers。无需配置 Aria",
+                "score": "0"
+            },
+            {
+                "title": "618 正版软件特价：Directory Opus、Start11、Bartender、Fences、WinRAR 等多款软件限时 5 折起",
+                "link": "https://www.appinn.com/lizhi-25618/",
+                "published": "Tue, 20 May 2025 09:33:13 +0000",
+                "summary": "风口浪尖的数码荔枝618活动开始了。挑几款价格合适的正版软件： &#8212; Windows &#8212; Directory Opus 限时 85 折，仅需 92.65 元起 Directory",
+                "score": "0"
+            },
+            {
+                "title": "谷歌为智能 AI 笔记本 NotebookLM 发布 Android 与 iOS 客户端",
+                "link": "https://www.appinn.com/google-notebooklm-app-launch/",
+                "published": "Tue, 20 May 2025 09:00:14 +0000",
+                "summary": "NotebookLM 是一款由谷歌发布的智能 AI 笔记本工具，它可以帮用户用 AI 处理文档、笔记、链接、视频，然后进行对话式问答，以及生成有趣的音频播客。之前青小蛙还录制过视频。@Appinn 今",
+                "score": "0.53"
+            }
+        ]
+    }
+]
