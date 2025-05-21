@@ -36,7 +36,7 @@ Live2d 窗口:
 
 TTS 设置:
 
-!["TTS Setting"](./interface_images/tts_setting.png)
+!["TTS Setting"](./interface_images/TTS_setting.png)
 
 # 开发 #
 
@@ -67,6 +67,7 @@ python live2d_interface.py
 ```
 
 # 下载桌面应用程序 #
+
 请从以下链接下载桌面应用程序：
 
 [下载]
@@ -75,6 +76,7 @@ python live2d_interface.py
 (https://www.alipan.com/s/QcV15UBpbb4)
 
 或者从Github Release下载
+
 注意:
 
 由于预训练模型体积较大，软件包较大
