@@ -74,7 +74,7 @@ please download the desktop application from the following link:
 
 total size: 3.5G(contains the pretrained model)
 
-(https://www.alipan.com/s/QcV15UBpbb4)
+(https://www.alipan.com/s/RtSB4PMt8vk)
 
 or download from the github release
 
@@ -82,5 +82,5 @@ Note:
 
 the package is large because of the large size of the pretrained model
 
-please modify the extension name to .exe
+please modify the extension name to .zip
 
