@@ -73,7 +73,7 @@ python live2d_interface.py
 [下载]
 (总文件大小为3.5G，包含预训练模型)
 
-(https://www.alipan.com/s/QcV15UBpbb4)
+(https://www.alipan.com/s/RtSB4PMt8vk)
 
 或者从Github Release下载
 
@@ -81,4 +81,4 @@ python live2d_interface.py
 
 由于预训练模型体积较大，软件包较大
 
-请将扩展名修改为 .exe
+请将扩展名修改为 .zip
