@@ -29,11 +29,13 @@ class TimeManager(QWidget):
         self.is_working = True
         self.setup_ui()
         self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.Tool)
-        self.short_break_count = 0
-        self.long_break_count = 0
-        self.is_short_break = True
+        # self.short_break_count = 0
+        # self.long_break_count = 0
+        # self.is_short_break = True
         # 加载配置
         self.load_config()
+        # 新增工作周期
+        self.work_cycles = 0
     
     def setup_ui(self):
         """初始化界面布局"""
@@ -142,24 +144,35 @@ class TimeManager(QWidget):
             self.update_countdown_display()
         else:
             self.timer.stop()
-            result = self.send_rest()
             
-            # 发射信号通知主窗口
-            self.rest_triggered.emit(result)
-            
-            if result == 1:
-                duration = self.tuple_to_seconds(self.get_time_values("long_break_duration"))
-                self.is_working = False
-                self.start_countdown(duration)
-            elif result == 0:
-                duration = self.tuple_to_seconds(self.get_time_values("short_break_duration"))
+            if self.is_working:
+                # 工作时间结束，进入休息模式
+                self.work_cycles += 1  # 增加工作周期计数
+                
+                # 获取配置值
+                short_gap = self.tuple_to_seconds(self.get_time_values("short_break_gap"))
+                long_gap = self.tuple_to_seconds(self.get_time_values("long_break_gap"))
+                
+                # 判断休息类型：优先检查长休息条件
+                if self.work_cycles * short_gap >= long_gap:
+                    # 满足长休息条件
+                    self.rest_triggered.emit(1)  # 长休息信号
+                    duration = self.tuple_to_seconds(self.get_time_values("long_break_duration"))
+                    self.work_cycles = 0  # 重置工作周期
+                else:
+                    # 仅满足短休息条件
+                    self.rest_triggered.emit(0)  # 短休息信号
+                    duration = self.tuple_to_seconds(self.get_time_values("short_break_duration"))
+                
                 self.is_working = False
                 self.start_countdown(duration)
             else:
+                # 休息时间结束，返回工作模式
+                self.rest_triggered.emit(2)  # 保持/返回工作信号
                 gap = self.tuple_to_seconds(self.get_time_values("short_break_gap"))
                 self.is_working = True
                 self.start_countdown(gap)
-                self.countdown_label.setText("")
+
     def send_rest(self):
         """判断是否需要切换休息模式"""
         # 设置一个标志，初始为 False
@@ -209,6 +222,9 @@ class TimeManager(QWidget):
                 "short_break_duration": self.get_time_values("short_break_duration"),
                 "long_break_duration": self.get_time_values("long_break_duration")
             }
+            # 重置work_cycle计数器
+            self.work_cycles = 0
+            # 检查时间参数是否为负值        
             if any(v < 0 for group in settings.values() for v in group):
                 raise ValueError("时间参数不能为负值")
             initial_gap = self.tuple_to_seconds(settings["short_break_gap"])
