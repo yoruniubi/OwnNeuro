@@ -519,10 +519,13 @@ class Win(QOpenGLWidget):
         """处理来自工作模式窗口的休息通知"""
         if result == 1:
             text = "长休息时间到了"
+            self.showTeachingTip(text)
         elif result == 0:
             text = "短休息时间到了"
+            self.showTeachingTip(text)
         else:
             text = "继续工作"
+            self.showTeachingTip(text)
         if self.tts_enabled:    
             # 启动TTS线程
             tts_worker = TTSWorker(text)
