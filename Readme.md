@@ -74,7 +74,7 @@ please download the desktop application from the following link:
 
 total size: 3.5G(contains the pretrained model)
 
-(https://www.alipan.com/s/RtSB4PMt8vk)
+(https://www.alipan.com/s/UX8T3dPv51t)
 
 or download from the github release
 
